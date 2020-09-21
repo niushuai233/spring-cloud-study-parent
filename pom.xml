@@ -8,7 +8,7 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>cc.niushuai.study</groupId>
+    <groupId>cc.niushuai.study.springcloud</groupId>
     <artifactId>spring-cloud-study-parent</artifactId>
     <version>0.0.1</version>
     <name>spring-cloud-study-parent</name>
