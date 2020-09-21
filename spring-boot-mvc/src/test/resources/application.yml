@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /
+  port: 8090
+logging:
+  level:
+    root: INFO
+    org.springframework.web: TRACE
