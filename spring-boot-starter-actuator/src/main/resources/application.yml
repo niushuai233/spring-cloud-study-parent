@@ -1,0 +1,25 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /actuator
+logging:
+  level:
+    root: INFO
+    org.springframework.web: TRACE
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator-manage
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+info:
+  app:
+    name: spring-boot-starter-actuator
+    version: 0.0.1
+  app-name: spring-boot-starter-actuator
+  app-version: 0.0.1
