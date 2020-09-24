@@ -21,3 +21,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://server1.eureka.cc:19100/eureka
+  server:
+    enable-self-preservation: false

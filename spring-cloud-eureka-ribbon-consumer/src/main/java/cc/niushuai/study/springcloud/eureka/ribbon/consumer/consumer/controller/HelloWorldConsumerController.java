@@ -20,9 +20,7 @@ public class HelloWorldConsumerController {
     @RequestMapping
     public String call() {
 
-        String res = restTemplate.getForObject("http://niushuai-study-eureka-client-1/helloWorld", String.class);
-
-        return res;
+        return restTemplate.getForObject("http://niushuai-study-eureka-client/helloWorld", String.class);
     }
 
 }
