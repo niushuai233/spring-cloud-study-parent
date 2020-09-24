@@ -1,0 +1,16 @@
+server:
+  port: 19210
+spring:
+  application:
+    name: niushuai-study-eureka-client
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  instance:
+    hostname: client2.eureka.cc
+  client:
+    service-url:
+      defaultZone: http://server1.eureka.cc:19100/eureka,http://server2.eureka.cc:19200/eureka

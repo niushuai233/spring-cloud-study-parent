@@ -1,0 +1,23 @@
+server:
+  port: 19200
+spring:
+  application:
+    # 多个注册中心 spring.application.name 要保持一致
+    name: niushuai-study-eureka-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  instance:
+    # eureka 服务名
+    hostname: server1.eureka.cc
+  client:
+    # 禁用之后注册的节点会变为不可用
+    # 是否向注册中心注册自己
+    register-with-eureka: true
+    # 注册中心是否检索服务
+    fetch-registry: true
+    service-url:
+      defaultZone: http://server1.eureka.cc:19100/eureka

@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
 
     <modules>
@@ -27,6 +28,11 @@
         <module>spring-boot-starter-actuator</module>
         <module>spring-boot-starter-mybatis-plus</module>
         <module>spring-boot-starter-hutool-db</module>
+        <module>spring-cloud-eureka-client-1</module>
+        <module>spring-cloud-eureka-client-2</module>
+        <module>spring-cloud-eureka-server-1</module>
+        <module>spring-cloud-eureka-server-2</module>
+        <module>spring-cloud-eureka-ribbon-consumer</module>
     </modules>
 
     <dependencies>
@@ -70,6 +76,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
