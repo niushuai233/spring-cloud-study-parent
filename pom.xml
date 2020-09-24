@@ -33,6 +33,7 @@
         <module>spring-cloud-eureka-server-1</module>
         <module>spring-cloud-eureka-server-2</module>
         <module>spring-cloud-eureka-ribbon-consumer</module>
+        <module>spring-cloud-ribbon</module>
     </modules>
 
     <dependencies>
