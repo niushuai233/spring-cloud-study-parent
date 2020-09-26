@@ -35,6 +35,7 @@
         <module>spring-cloud-eureka-ribbon-consumer</module>
         <module>spring-cloud-ribbon</module>
         <module>spring-cloud-hystrix</module>
+        <module>spring-cloud-feign</module>
     </modules>
 
     <dependencies>

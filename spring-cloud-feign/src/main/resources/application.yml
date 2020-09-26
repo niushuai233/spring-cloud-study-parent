@@ -1,0 +1,9 @@
+server:
+  port: 19400
+spring:
+  application:
+    name: niushuai-study-openfeign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1.eureka.cc:19100/eureka

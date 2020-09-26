@@ -21,9 +21,15 @@ public class HelloWorldController {
     private DiscoveryClient discoveryClient;
 
     @RequestMapping
-    public String sayHello() {
+    public String helloWorld() {
 
         return "Hello World! client 1";
+    }
+
+    @RequestMapping
+    public String helloWorld(String name, String age) {
+
+        return "";
     }
 
     @RequestMapping("/info")
