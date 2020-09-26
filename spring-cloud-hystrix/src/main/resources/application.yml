@@ -1,0 +1,9 @@
+server:
+  port: 19311
+spring:
+  application:
+    name: niushuai-study-hystrix
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1.eureka.cc:19100/eureka

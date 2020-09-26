@@ -13,4 +13,4 @@ eureka:
     hostname: client2.eureka.cc
   client:
     service-url:
-      defaultZone: http://server1.eureka.cc:19100/eureka,http://server2.eureka.cc:19200/eureka
+      defaultZone: http://server1.eureka.cc:19100/eureka

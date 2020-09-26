@@ -1,5 +1,6 @@
 package cc.niushuai.study.springcloud.eureka.client2.helloworld.controller;
 
+import cn.hutool.core.util.RandomUtil;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,11 @@ public class HelloWorldController {
     private DiscoveryClient discoveryClient;
 
     @RequestMapping
-    public String sayHello() {
+    public String sayHello() throws InterruptedException {
+
+        long millis = RandomUtil.randomLong(0L, 3000L);
+        System.out.println(millis);
+        Thread.sleep(millis);
 
         return "Hello World! client 2";
     }
