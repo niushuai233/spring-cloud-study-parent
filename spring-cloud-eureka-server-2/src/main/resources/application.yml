@@ -12,7 +12,7 @@ management:
 eureka:
   instance:
     # eureka 服务名
-    hostname: server1.eureka.cc
+    hostname: server2.eureka.cc
   client:
     # 禁用之后注册的节点会变为不可用
     # 是否向注册中心注册自己
@@ -21,5 +21,3 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://server1.eureka.cc:19100/eureka
-  server:
-    enable-self-preservation: false
