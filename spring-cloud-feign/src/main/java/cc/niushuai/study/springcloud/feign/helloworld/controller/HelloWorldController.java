@@ -1,4 +1,4 @@
-package cc.niushuai.study.springcloud.feign.controller;
+package cc.niushuai.study.springcloud.feign.helloworld.controller;
 
 import cc.niushuai.study.springcloud.feign.helloworld.service.HelloWorldService;
 import org.springframework.web.bind.annotation.RequestMapping;

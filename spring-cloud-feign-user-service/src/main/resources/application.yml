@@ -1,12 +1,9 @@
 server:
-  port: 19400
+  port: 19411
 spring:
   application:
-    name: niushuai-study-openfeign
+    name: spring-cloud-feign-user-service
 eureka:
   client:
     service-url:
       defaultZone: http://server1.eureka.cc:19100/eureka
-logging:
-  level:
-    org.springframework.web: trace
