@@ -3,8 +3,7 @@ package cc.niushuai.study.springcloud.feign.userservice.user.controller;
 import cc.niushuai.springcloud.api.common.entity.Result;
 import cc.niushuai.springcloud.api.user.entity.ClientUser;
 import cn.hutool.core.util.RandomUtil;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ns
@@ -23,5 +22,34 @@ public class ClientUserController {
 
         System.out.println(clientUser);
         return Result.success().put("data", clientUser);
+    }
+
+
+    @RequestMapping("/getUserInfo1")
+    public Result getUserInfo1(@RequestParam String name, @RequestParam Integer age) {
+        name += RandomUtil.randomChar("askldhdjkfhgsdjkhfsfjkdghsfjkdghsfjkdj");
+        age = age + 1;
+
+        return Result.success(new ClientUser(name, age));
+    }
+
+    @RequestMapping("/getUserInfo2")
+    public Result getUserInfo2(@RequestHeader String name, @RequestHeader Integer age) {
+
+        name += RandomUtil.randomChar("askldhdjkfhgsdjkhfsfjkdghsfjkdghsfjkdj");
+        age = age + 2;
+
+        return Result.success(new ClientUser(name, age));
+    }
+
+    @RequestMapping("/getUserInfo3")
+    public Result getUserInfo3(@RequestBody ClientUser clientUser) {
+
+        char aChar = RandomUtil.randomChar("askldhdjkfhgsdjkhfsfjkdghsfjkdghsfjkdj");
+
+        clientUser.setName(clientUser.getName() + aChar)
+                .setAge(clientUser.getAge() + 3);
+
+        return Result.success(clientUser);
     }
 }

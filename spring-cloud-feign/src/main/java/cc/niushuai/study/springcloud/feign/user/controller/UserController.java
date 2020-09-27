@@ -1,7 +1,9 @@
 package cc.niushuai.study.springcloud.feign.user.controller;
 
 import cc.niushuai.springcloud.api.common.entity.Result;
+import cc.niushuai.springcloud.api.user.entity.ClientUser;
 import cc.niushuai.study.springcloud.feign.user.servive.UserService;
+import cn.hutool.core.bean.BeanUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -60,5 +62,30 @@ public class UserController {
 
         return Result.success(data);
     }
+
+    @RequestMapping("/getUserInfo")
+    public Result getUserInfo1(String name, Integer age) {
+
+        Result result1 = userService.getUserInfo1(name, age);
+        Result result2 = userService.getUserInfo2(name, age);
+        Result result3 = userService.getUserInfo3(new ClientUser(name, age));
+
+        return Result.success()
+                .put("result1", printAndReturnClientUser(result1))
+                .put("result2", printAndReturnClientUser(result2))
+                .put("result3", printAndReturnClientUser(result3));
+    }
+
+    @SuppressWarnings("deprecated")
+    private ClientUser printAndReturnClientUser(Result result1) {
+
+        log.info("code: {}", result1.getCode());
+        log.info("msg: {}", result1.getMsg());
+        log.info("data: {}", result1.getData());
+
+        return BeanUtil.mapToBean((Map<String, Object>) result1.getData(), ClientUser.class, true);
+
+    }
+
 
 }
