@@ -7,12 +7,21 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1.eureka.cc:19100/eureka
-spring-cloud-feign-user-service:
-  ribbon:
-    connectTimeout: 1000
-    readTimeout: 3000
-    maxAutoRetries: 1
-    maxAutoRetriesNextServer: 2
 logging:
   level:
     org.springframework.web: trace
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000  #熔断超时时间
+ribbon:
+  readTimeout: 1000  #请求处理的超时时间
+  connectTimeout: 1000 #请求连接超时时间
+  maxAutoRetries: 1 #对当前实例的重试次数
+  maxAutoRetriesNextServer: 2 #切换实例的重试次数 1

@@ -24,9 +24,6 @@ public class ClientUserController {
         long x = -1;
         try {
             x = RandomUtil.randomLong(500, randomDelay);
-            if (x > 1000) {
-                x = x - 1000;
-            }
             System.out.println("sleepTime: " + x);
             Thread.sleep(x);
         } catch (InterruptedException e) {

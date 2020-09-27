@@ -52,6 +52,9 @@ public class UserController {
 
         Result result = userService.randomUserInfo();
 
+        if (result.getCode() != 200) {
+            return result;
+        }
         System.out.println(result);
 
         log.info("code: {}", result.getCode());
@@ -60,7 +63,13 @@ public class UserController {
         Map<String, Object> data = (Map<String, Object>) result.getData();
         log.info("data: {}", data);
 
+
         return Result.success(data).put("serverId", result.get("serverId")).put("sleepTime", result.get("sleepTime"));
+    }
+
+    public Result randomUserNewFallback() {
+        log.info("fallback");
+        return Result.error("randomUserNewFallback");
     }
 
     @RequestMapping("/getUserInfo")
