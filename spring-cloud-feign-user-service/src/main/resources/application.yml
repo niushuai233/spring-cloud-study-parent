@@ -7,3 +7,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1.eureka.cc:19100/eureka
+niushuai:
+  server:
+    id: 1
+    randomDelay: 1000

@@ -60,7 +60,7 @@ public class UserController {
         Map<String, Object> data = (Map<String, Object>) result.getData();
         log.info("data: {}", data);
 
-        return Result.success(data);
+        return Result.success(data).put("serverId", result.get("serverId")).put("sleepTime", result.get("sleepTime"));
     }
 
     @RequestMapping("/getUserInfo")

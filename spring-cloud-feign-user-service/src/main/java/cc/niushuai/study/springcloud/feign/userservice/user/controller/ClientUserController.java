@@ -3,6 +3,7 @@ package cc.niushuai.study.springcloud.feign.userservice.user.controller;
 import cc.niushuai.springcloud.api.common.entity.Result;
 import cc.niushuai.springcloud.api.user.entity.ClientUser;
 import cn.hutool.core.util.RandomUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,15 +14,31 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/userService/clientUser")
 public class ClientUserController {
 
+    @Value("${niushuai.server.id}")
+    private Long serverId;
+    @Value("${niushuai.server.randomDelay}")
+    private Long randomDelay;
+
     @RequestMapping("/randomUser")
     public Result randomUser() {
+        long x = -1;
+        try {
+            x = RandomUtil.randomLong(500, randomDelay);
+            if (x > 1000) {
+                x = x - 1000;
+            }
+            System.out.println("sleepTime: " + x);
+            Thread.sleep(x);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         int age = RandomUtil.randomInt(17, 100);
 
         ClientUser clientUser = new ClientUser().setName("张" + age).setAge(age);
 
         System.out.println(clientUser);
-        return Result.success().put("data", clientUser);
+        return Result.success().put("data", clientUser).put("serverId", serverId).put("sleepTime", x);
     }
 
 

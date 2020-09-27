@@ -7,6 +7,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1.eureka.cc:19100/eureka
+spring-cloud-feign-user-service:
+  ribbon:
+    connectTimeout: 1000
+    readTimeout: 3000
+    maxAutoRetries: 1
+    maxAutoRetriesNextServer: 2
 logging:
   level:
     org.springframework.web: trace
