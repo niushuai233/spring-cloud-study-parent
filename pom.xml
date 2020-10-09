@@ -38,6 +38,7 @@
         <module>spring-cloud-feign</module>
         <module>spring-cloud-api</module>
         <module>spring-cloud-feign-user-service</module>
+        <module>spring-cloud-zuul-api-gateway</module>
     </modules>
 
     <dependencies>

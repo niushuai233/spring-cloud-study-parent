@@ -1,0 +1,25 @@
+server:
+  port: 19500
+spring:
+  application:
+    name: spring-cloud-zuul-api-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1.eureka.cc:19100/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+zuul:
+  routes:
+    api-a-url:
+      url: http://localhost:19400/
+      path: /api-a-url/**
+    api-b-url:
+      serviceId: NIUSHUAI-STUDY-OPENFEIGN
+      path: /api-b-url/**
+    api-c-url:
+      serviceId: SPRING-CLOUD-FEIGN-USER-SERVICE
+      path: /api-c-url/**
