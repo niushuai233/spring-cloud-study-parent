@@ -40,6 +40,7 @@
         <module>spring-cloud-feign-user-service</module>
         <module>spring-cloud-zuul-api-gateway</module>
         <module>spring-cloud-config-server</module>
+        <module>spring-cloud-config-client</module>
     </modules>
 
     <dependencies>
