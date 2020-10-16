@@ -1,7 +1,8 @@
 package cc.niushuai.springcloud.api.common.entity;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.HashMap;
@@ -11,7 +12,8 @@ import java.util.HashMap;
  * @date 2020/9/26
  */
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
 public class Result extends HashMap {
 
@@ -62,11 +64,7 @@ public class Result extends HashMap {
     }
 
     public static Result info(Integer code, String msg, Object data) {
-        Result build = Result.builder().build();
-        build.put(CODE, code);
-        build.put(MSG, msg);
-        build.put(DATA, data);
-        return build;
+        return new Result(code, msg, data);
     }
 
     public Result put(String key, Object data) {
