@@ -4,5 +4,18 @@ spring:
   cloud:
     config:
       label: master
-      profile: local
+      profile: dev
       uri: http://localhost:19600/
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: niushuai233
+    password: niushuai233
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org.springframework.web: trace
