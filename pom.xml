@@ -41,6 +41,7 @@
         <module>spring-cloud-zuul-api-gateway</module>
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-config-client</module>
+        <module>spring-cloud-rabbitmq</module>
     </modules>
 
     <dependencies>
