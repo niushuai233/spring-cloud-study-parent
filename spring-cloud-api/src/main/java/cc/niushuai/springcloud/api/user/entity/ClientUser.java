@@ -11,6 +11,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class ClientUser {
 
+    private Long id;
     private String name;
     private Integer age;
 }

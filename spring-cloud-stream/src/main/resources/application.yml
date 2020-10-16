@@ -1,0 +1,10 @@
+server:
+  port: 19700
+spring:
+  application:
+    name: spring-cloud-stream-niushuai
+  rabbitmq:
+    addresses: localhost
+    port: 5672
+    username: niushuai233
+    password: niushuai233
